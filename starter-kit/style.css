@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "Font Awesome 5 Free Solid";
+  src: url("./font-awesome-5/fa.eot"); /* IE9*/
+  src:
+    url("./font-awesome-5/fa.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("./font-awesome-5/fa.woff2") format("woff2"),
+    /* chrome、firefox */ url("./font-awesome-5/fa.woff") format("woff"),
+    /* chrome、firefox */ url("./font-awesome-5/fa.ttf") format("truetype"),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+      url("./font-awesome-5/fa.svg#Font Awesome 5 Free Solid") format("svg"); /* iOS 4.1- */
+}
+
+:root {
+  --color-button-hover: #bbdfff;
+}
+
+html,
+body,
+#canvas {
+  font-family: "IBM Plex Sans", sans-serif;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.bottom-buttons {
+  bottom: 20px;
+  left: 20px;
+}
+
+.bottom-buttons a:hover,
+.bottom-buttons button:hover,
+.demojs-buttons-active:hover {
+  background-color: var(--color-button-hover);
+  transition:
+    background-color 0.2s linear,
+    border-color 0.2s linear;
+  border-color: #9ec0ed;
+}
+
+.bottom-buttons a,
+.bottom-buttons button,
+.demojs-buttons-active {
+  background-color: var(--color-button-hover);
+  transition:
+    background-color 0.2s linear,
+    border-color 0.2s linear;
+}
+
+.bottom-buttons :is(button, a).active {
+  opacity: 1;
+}
+
+/* screen interaction helpers & modal */
+
+#io-dialog-main {
+  display: none; /*default*/
+}
+
+#io-editing-tools-buttons {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  margin: 0;
+}
+
+.icon-keyboard::before {
+  content: "\e802";
+}
+
+.icon-resize-full::before {
+  content: "\e801";
+}
+
+.keybindings {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 10px;
+  align-items: center;
+}
+
+.binding {
+  font-family: monospace;
+}

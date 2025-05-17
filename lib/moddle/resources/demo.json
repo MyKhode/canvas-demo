@@ -1,0 +1,212 @@
+{
+  "name": "DEMO",
+  "uri": "http://demo/schema/demo",
+  "prefix": "demo",
+  "xml": {
+    "tagAlias": "lowerCase"
+  },
+  "types": [
+    {
+      "name": "BoardElement",
+      "isAbstract": true,
+      "properties": [
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "id",
+          "isAttr": true,
+          "type": "String",
+          "isId": true
+        }
+      ]
+    },
+    {
+      "name": "Actor",
+      "superClass": ["BoardElement"],
+      "properties": [
+        {
+          "name": "description",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "assignment",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "type",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "flowss",
+          "isMany": true,
+          "type": "Flow",
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "Transaction",
+      "superClass": ["BoardElement"],
+      "properties": [
+        {
+          "name": "assignment",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "type",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "flows",
+          "isMany": true,
+          "type": "Flow",
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "InformationBank",
+      "superClass": ["BoardElement"],
+      "properties": [
+        {
+          "name": "assignment",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "type",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "flows",
+          "isMany": true,
+          "type": "Flow",
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "Organization",
+      "superClass": ["DemoBoard"],
+      "properties": [
+        {
+          "name": "assignment",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "Flow",
+      "superClass": ["BoardElement"],
+      "properties": [
+        {
+          "name": "strokeStyle",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "sourceMarker",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "sourceRef",
+          "isAttr": true,
+          "isReference": true,
+          "type": "Object"
+        },
+        {
+          "name": "targetMarker",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "targetRef",
+          "isAttr": true,
+          "isReference": true,
+          "type": "Object"
+        }
+      ]
+    },
+    {
+      "name": "DemoBoard",
+      "superClass": ["RootElement"],
+      "properties": [
+        {
+          "name": "boardElements",
+          "isMany": true,
+          "type": "BoardElement"
+        }
+      ]
+    },
+    {
+      "name": "TextBox",
+      "superClass": ["BoardElement"],
+      "properties": [
+        {
+          "name": "fontSize",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "RootElement",
+      "isAbstract": true,
+      "superClass": ["BoardElement"]
+    },
+    {
+      "name": "Definitions",
+      "superClass": ["BoardElement"],
+      "properties": [
+        {
+          "name": "targetNamespace",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "expressionLanguage",
+          "default": "http://www.w3.org/1999/XPath",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "typeLanguage",
+          "default": "http://www.w3.org/2001/XMLSchema",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "rootElements",
+          "type": "RootElement",
+          "isMany": true
+        },
+        {
+          "name": "rootBoards",
+          "isMany": true,
+          "type": "demoDi:DemoRootBoard"
+        },
+        {
+          "name": "exporter",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "exporterVersion",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<demo:definitions xmlns:demo="http://demo/schema/demo" xmlns:demoDi="http://demo/schema/demoDi">
+    <demo:demoBoard id="Board" />
+    <demoDi:demoRootBoard id="RootBoard">
+        <demoDi:demoPlane id="Plane" boardElement="Board" />
+    </demoDi:demoRootBoard>
+</demo:definitions>

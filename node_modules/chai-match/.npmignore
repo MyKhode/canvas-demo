@@ -1,0 +1,5 @@
+.editorconfig
+*.log
+node_modules
+*.swp
+test

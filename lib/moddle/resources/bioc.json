@@ -1,0 +1,41 @@
+{
+  "name": "Colors for DEMO Diagrams",
+  "uri": "http://demo/schema/bioc",
+  "prefix": "bioc",
+  "types": [
+    {
+      "name": "ColoredShape",
+      "extends": ["demoDi:DemoShape"],
+      "properties": [
+        {
+          "name": "stroke",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "fill",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "ColoredEdge",
+      "extends": ["demoDi:Flow"],
+      "properties": [
+        {
+          "name": "stroke",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "fill",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    }
+  ],
+  "enumerations": [],
+  "associations": []
+}
